@@ -1,5 +1,5 @@
 # Jquery练习
-+<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
