@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .pad{
+        height: 500px;
+        background-color: yellow;
+    }
+
+    .hed{
+        height:500px;
+        background-color:aquamarine;
+    }
+
+    .fex{
+        position:fixed;
+        bottom: 15px; 
+        right: 15px;      
+
+    }
+    
+    .btn{
+        width: 60px;
+        border-radius: 15em;
+        background-color:darkorange;
+   }
+    
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $( function(){
+        var btns = document.getElementsByTagName("button");
+        
+        btns[0].onclick=function(){
+            console.log($("body").scrollTop()+$("html").scrollTop())
+            // 因为IE与其他游览器不同，有了提取body和html的区别   
+                 }
+        
+        btns[1].onclick=function(){
+            $("html,body").scrollTop(0)
+        }
+
+        
+    
+    }) 
+    </script>
+    
+    
+        
+</head>
+<body>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="fex">
+<button class="btn">获取</button>
+<button class="btn">跳转</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>下拉框菜单</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    .nav{
+        list-style: none;
+        width: 300px;
+        margin: 100px auto;
+        }
+    .nav>li{
+        border:1px solid #000;
+        line-height: 35px;
+        border-bottom: none;
+        text-indent: 2em;
+        position: relative;
+    }
+    .nav>li:last-child{
+        border: 1px solid #000;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    .nav>li:first-child{
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+    .nav>li>span{
+        position:absolute;
+        right: 20px;
+        top:7px;
+
+    }
+    .sub>li{
+        list-style: none;
+        background-color: blueviolet;
+        border-bottom: 1px solid white;
+
+    }
+    .sub>li:hover{
+        background-color:rosybrown;
+    }
+    
+    .sub{
+        display: none;
+    }
+    
+
+
+    </style>
+    <script src="jquery-3.3.1.min.js"> </script>
+    <script>       
+    $(function(){
+                $('.nav>li').click(function(){
+                    var $sub = $(this).children('.sub');
+                    $sub.stop().slideToggle(1000);
+
+                    var $others = $(this).siblings().children(".sub")
+                    $others.stop().slideUp(1000);
+
+                })
+            })
+
+            
+    </script>
+    
+</head>
+<body>
+    <ul class="nav">
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>       
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+                <li>二级菜单</li>
+            </ul>       
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+        <li>一级菜单<span class="glyphicon glyphicon-chevron-right"></span>
+            <ul class="sub">
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+        </li>
+    </ul>
+    
+</body>
+</html>

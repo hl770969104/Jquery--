@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+
+
+   
+    
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $( function(){
+        $("button").click(function(){
+            $("ul").append("<li>woshi</li>")
+
+        });
+        // $("ul>li").click(function () { 
+        //     console.log($(this).html());
+            
+        // });
+        // 只能监听页面生成是已经载入好的3个li标签，无法监听到后来通过append函数加入的li标签
+        $("ul").delegate("li","click",function() {
+            console.log($(this).html());
+        })
+        //使用委托能自上而下的监听事件，利用在入口函数执行之前存在的标签，去监听动态函数
+
+    })
+       
+    </script>
+    
+    
+        
+</head>
+<body>
+<ul>
+    <li>woshi1</li>
+    <li>woshi2</li>
+    <li>woshi3</li>
+</ul>
+<button>新增一个woshi</button>
+</body>
+</html>

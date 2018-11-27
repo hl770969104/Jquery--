@@ -1,0 +1,59 @@
+<!-- 1.什么是事件冒泡
+自上而下的事件继承
+2.如何处理事件冒泡
+运用return false停止  以及event.stopPropagation()停止回调 *写在子类中
+3.什么是默认行为
+4.如何处理默认行为 -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .father{
+        height: 500px;
+        width: 500px;
+        background-color:red;
+    }
+
+    .son{
+        height:250px;
+        width:250px;
+        background-color:aquamarine;
+    }
+
+   
+    
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $( function(){
+      
+        $(".son").click(function (event) {
+           alert("i am son")
+           event.stopPropagation()
+       })
+       
+       $(".father").click(function () {
+           alert("i am father")
+       })
+
+        
+        })
+        
+
+         
+    </script>
+    
+    
+        
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+</div>
+
+</body>
+</html>

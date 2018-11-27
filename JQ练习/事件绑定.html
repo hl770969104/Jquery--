@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />    
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .pad{
+        height: 500px;
+        background-color: yellow;
+    }
+
+    .hed{
+        height:500px;
+        background-color:aquamarine;
+    }
+
+    .fex{
+        position:fixed;
+        bottom: 15px; 
+        right: 15px;      
+
+    }
+    
+    .btn1,.btn2{
+        width: 60px;
+        border-radius: 15em;
+        background-color:darkorange;
+   }
+    
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+    $( function(){
+       
+
+        $(".btn1").click(function () {
+            alert("hello hl")
+        })
+        
+        $(".btn1").click(function () {
+            alert("hello h2")
+        })
+
+         $(".btn2").click(function () {
+            alert("hello h3")
+        })
+
+         $(".btn2").click(function () {
+            alert("hello h4")
+        })
+        // click与onclick的区别以及怎样分类两个按钮
+
+        // csdn.
+        // click()和onclick()的区别：
+        // onclick是绑定事件，告诉浏览器在鼠标点击时候要做什么
+        // click本身是方法作用是触发onclick事件，只要执行了元素的click()方法，就会触发onclick事件。
+        // click()方法的主要作用是触发调用click方法元素onclick事件,实际上是模拟了鼠标的点击动作。此外，如果在click括号内定义了其他可执行语句，则click方法会在执行完onclick事件之后执行括号内部的语句。
+        // 我们还可以注意到：onclick是事件，而click是方法，两者是不同的概念。
+
+
+        
+    }) 
+    </script>
+    
+    
+        
+</head>
+<body>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="hed"></div>
+<div class="pad"></div>
+<div class="fex">
+<button class="btn1">获取</button>
+<button class="btn2">跳转</button>
+</div>
+
+</body>
+</html>

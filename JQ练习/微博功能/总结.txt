@@ -1,0 +1,38 @@
+***运用委托监听事件：
+ $("body").delegate(".comment","propertychange input",function(){  }）；
+ $("body").delegate(".glyphicon.glyphicon-thumbs-up","click",function(){
+               $(this).text(parseInt($(this).text())+1);
+            })；
+
+
+*****this的指向：
+ $("body").delegate(".glyphicon.glyphicon-thumbs-up","click",function(){
+               $(this).text(parseInt($(this).text())+1);
+            })；
+这个this指向.glyphicon.glyphicon-thumbs-up
+
+
+*****将html用Jquery函数传递需要变格式。详情看代码中createEle(text)方法；
+
+*****javascript：；伪元素，现知用途防止点击链接跳回网页页头；
+ <a href="javascript:;"><span class="glyphicon glyphicon-thumbs-up">0</span></a>
+
+
+*****运用Date（）对象中方法修改格式
+function formartDate() {
+                var date = new Date();
+                var arr = [date.getFullYear()+"-",
+                date.getMonth()+1+"-",
+                date.getDate()+" ",
+                date.getHours()+":",
+                date.getMinutes()+":",
+                date.getSeconds()]; 
+                return arr.join("");
+
+              }
+
+*****<textarea>标签
+<textarea> 标签定义一个多行的文本输入控件。
+文本区域中可容纳无限数量的文本，其中的文本的默认字体是等宽字体（通常是 Courier）。
+可以通过 cols 和 rows 属性来规定 textarea 的尺寸大小，不过更好的办法是使用 CSS 的 height 和 width 属性。
+

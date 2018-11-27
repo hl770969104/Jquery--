@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .center{
+            margin: 0 auto;
+            width: 600px;
+            height: 168px;
+            background-color: blanchedalmond;
+            border-left:  2px solid blanchedalmond;
+            border-right:  2px solid blanchedalmond;
+
+        }
+        .center>.comment{
+            width: 570px;
+            height: 75px;            
+            margin-top:45px;
+            margin-left: 15px;
+            resize: none;
+            border:none;
+            outline:none;
+
+        }
+        .center>.send{
+            width: 82px;
+            height: 30px;
+            margin-top: 4px;
+            margin-left: 506px;
+            border: none;
+            background-color:tomato;
+            color:white;
+            outline:none;
+            
+        }
+        .center>.send:link{
+            background-color:tomato;
+        }
+        
+        .center>.send:active{
+            background-color:chocolate;
+        }
+        .messageList{
+            width: 600px;
+            margin: auto;
+            background: white;
+            
+
+        }
+        .info{
+            padding: 10px 20px;
+            border-bottom: 2px solid blanchedalmond;
+            border-left:  2px solid blanchedalmond;
+            border-right:  2px solid blanchedalmond;
+        }
+        .info>.infoText{
+            line-height: 25px;
+            margin-bottom: 10px;
+        }
+        .info>.infoOperation{
+            width: 100%;
+            overflow: hidden;
+        }
+        .infoOperation>.infoTime{
+            float: left;
+            font-size: 14px;
+            color:#ccc;
+        }
+        .infoOperation>.infoHandle{
+            float: right;
+            font-size: 13px;
+        }
+        .infoHandle>a{
+            text-decoration:none;
+            color:#ccc;            
+            margin-left: 13px;
+
+        }
+    
+    </style>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        
+        $(function(){
+            $("body").delegate(".comment","propertychange input",function(){
+            // 判断是否可以输入内容
+            if($(this).val().length>0){
+                $(".send").prop("disabled",false)
+
+            }else{
+                $(".send").prop("disabled",true)
+            }
+        });
+
+            // 1.监听按钮点击
+            $(".send").click(function(){
+                // 拿到用户输入的内容
+                var $text = $(".comment").val();
+                var $weibo = createEle($text);
+                // 在前面插入微博
+                $(".messageList").prepend($weibo);
+            })
+
+            // 2.监听顶点击
+           $("body").delegate(".glyphicon.glyphicon-thumbs-up","click",function(){
+               $(this).text(parseInt($(this).text())+1);
+            })
+
+            // 3.监听踩点击
+           $("body").delegate(".glyphicon.glyphicon-thumbs-down","click",function(){
+            $(this).text(parseInt($(this).text())+1);
+           })
+
+            // 4.监听删除点击
+            $("body").delegate(".glyphicon.glyphicon-remove","click",function(){
+               $(this).parents(".info").remove(); 
+           })
+            
+            // 创建节点的方法
+            function createEle(text){
+                var $weibo = $("<div class=\"info\">\n"+
+            "<p class=\"infoText\">\n"+text+
+                   
+
+            "</p>\n"+
+            "<p class=\"infoOperation\">\n"+
+                "<span class=\"infoTime\">"+formartDate()+"</span>\n"+
+                "<spa class=\"infoHandle\">\n"+
+                    "<a href=\"javascript:;\"><span class=\"glyphicon glyphicon-thumbs-up\">0</span></a>\n"+
+                    "<a href=\"javascript:;\"><span class=\"glyphicon glyphicon-thumbs-down\">0</span></a>\n"+
+                    "<a href=\"javascript:;\"><span class=\"glyphicon glyphicon-remove\">删除</span></a>\n"+
+                "</span>\n"+
+
+            "</p>\n"+
+        "</div>\n")
+        return $weibo;
+            }
+            function formartDate() {
+                var date = new Date();
+                var arr = [date.getFullYear()+"-",
+                date.getMonth()+1+"-",
+                date.getDate()+" ",
+                date.getHours()+":",
+                date.getMinutes()+":",
+                date.getSeconds()]; 
+                return arr.join("");
+
+              }
+              
+              
+
+        })
+
+    </script>
+    
+</head>
+<body>
+    <div class="center">
+        <textarea class="comment"></textarea>
+        <input type="button" value="发布" class="send" disabled>
+
+    </div>
+    <div class="messageList">
+        <div class="info">
+            <p class="infoText">
+                    bilibili是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的ACG氛围,最有创意的Up主。大家可以在这里找到许多欢乐。bilibili是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的ACG氛围,最有创意的Up主。大家可以在这里找到许多欢乐。 bilibili是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的ACG氛围,最有创意的Up主。大家可以在这里找到许多欢乐。bilibili是国内知名的视频弹幕网站,这里有最及时的动漫新番,最棒的ACG氛围,最有创意的Up主。大家可以在这里找到许多欢乐。
+
+            </p>
+            <p class="infoOperation">
+                <span class="infoTime">2018-11-22 16:17:21</span>
+                <spa class="infoHandle">
+                    <a href="javascript:;"><span class="glyphicon glyphicon-thumbs-up">0</span></a>
+                    <a href="javascript:;"><span class="glyphicon glyphicon-thumbs-down">0</span></a>
+                    <a href="javascript:;"><span class="glyphicon glyphicon-remove">删除</span></a>
+                </span>
+
+            </p>
+        </div>
+        
+    </div>
+
+    
+</body>
+</html>
