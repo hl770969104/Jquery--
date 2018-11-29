@@ -1,0 +1,23 @@
+什么是 HTML5 Web 存储?
+使用HTML5可以在本地存储用户的浏览数据。
+早些时候,本地存储使用的是 cookie。但是Web 存储需要更加的安全与快速. 这些数据不会被保存在服务器上，
+但是这些数据只用于用户请求网站数据上.它也可以存储大量的数据，而不影响网站的性能.
+数据以 键/值 对存在, web网页的数据只允许该网页访问使用。
+
+客户端存储数据的两个对象为：
+localStorage - 用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去除。
+sessionStorage - 用于临时保存同一窗口(或标签页)的数据，在关闭窗口或标签页之后将会删除这些数据。
+
+//验证是否可以使用存储
+<div id = "result"></div>
+<script>
+if(typeof(Storage)!=="undefined")
+{
+  localStorage.sitename="菜鸟教程";
+  document.getElementById("result").innerHTML="网站名：" + localStorage.sitename;
+}
+else
+{
+  document.getElementById("result").innerHTML="对不起，您的浏览器不支持 web 存储。";
+}
+</script>
